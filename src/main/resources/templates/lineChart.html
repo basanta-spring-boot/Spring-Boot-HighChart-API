@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Line Chart</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+
+</head>
+<body>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+	<div id="container"
+		style="min-width: 210px; height: 400px; margin: 0 auto"></div>
+
+
+	<script th:inline="javascript">
+		Highcharts.chart('container', {
+
+			title : {
+				text : 'Logarithmic axis demo'
+			},
+
+			xAxis : {
+				   categories: [[${techMap.keySet()}]],
+		            crosshair: true
+			},
+
+			yAxis : {
+				type : 'logarithmic',
+				minorTickInterval : 0.1
+			},
+
+			tooltip : {
+				headerFormat : '<b>{series.name}</b><br />',
+				pointFormat : 'y = {point.y}'
+			},
+
+			series : [ {
+				name : 'Technology',
+			    data: [[${techMap.values()}]]
+			} ]
+		});
+	</script>
+</body>
+</html>

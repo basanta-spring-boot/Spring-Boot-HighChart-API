@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<style type="text/css">
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333333;
+}
+
+li {
+	float: center;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 16px;
+	text-decoration: none;
+}
+
+li a:hover {
+	background-color: #111111;
+}
+</style>
+</head>
+<body>
+
+	<ul>
+		<li><a th:href="@{'/graph1'}">3D Graph</a></li>
+		<li><a th:href="@{'/graph2'}">3D Rotate Graph</a></li>
+		<li><a th:href="@{'/pie'}">Pie Chart</a></li>
+		<li><a th:href="@{'/lineChart'}">Line Chart Graph</a></li>
+		<li><a th:href="@{'/activityChart'}">Activity Circular Graph</a></li>
+	</ul>
+
+</body>
+</html>
